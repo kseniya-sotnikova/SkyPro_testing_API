@@ -1,0 +1,1532 @@
+{
+	"info": {
+		"_postman_id": "a37df891-33d8-4949-b385-9a89d0fdb8bf",
+		"name": "Расписание",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20982046"
+	},
+	"item": [
+		{
+			"name": "Past (positive)",
+			"item": [
+				{
+					"name": "Create event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"СКСтест\",\r\n    \"startAt\": \"2022-06-20T19:30:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:40:00+03:00\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createPersonal",
+							"host": [
+								"{{baseUrl}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update event (title, color, description)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"options date\",\r\n    \"title\": \"СКСтестtest\",\r\n    \"startAt\": \"2022-06-20T19:30:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:40:00+03:00\",\r\n    \"id\": {{boardId}},\r\n    \"oldStartAt\": \"{{startAt}}\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update event (just save)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"options date\",\r\n    \"title\": \"СКСтестtest\",\r\n    \"startAt\": \"2022-06-20T19:30:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:40:00+03:00\",\r\n    \"id\": {{boardId}},\r\n    \"oldStartAt\": \"{{startAt}}\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update event (past-present)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"options date\",\r\n    \"title\": \"СКСтестtest\",\r\n    \"startAt\": \"2022-06-20T19:30:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:40:00+03:00\",\r\n    \"id\": {{boardId}},\r\n    \"oldStartAt\": \"{{startAt}}\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update event (present-future)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"options date\",\r\n    \"title\": \"СКСтестtest\",\r\n    \"startAt\": \"2022-06-20T19:30:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:40:00+03:00\",\r\n    \"id\": {{boardId}},\r\n    \"oldStartAt\": \"{{startAt}}\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update event (future-past)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"options date\",\r\n    \"title\": \"СКСтестtest\",\r\n    \"startAt\": \"2022-06-20T19:30:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:40:00+03:00\",\r\n    \"id\": {{boardId}},\r\n    \"oldStartAt\": \"{{startAt}}\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update event (past-future)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"options date\",\r\n    \"title\": \"СКСтестtest\",\r\n    \"startAt\": \"2022-06-20T19:30:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:40:00+03:00\",\r\n    \"id\": {{boardId}},\r\n    \"oldStartAt\": \"{{startAt}}\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update event (future-present)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"options date\",\r\n    \"title\": \"СКСтестtest\",\r\n    \"startAt\": \"2022-06-20T19:30:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:40:00+03:00\",\r\n    \"id\": {{boardId}},\r\n    \"oldStartAt\": \"{{startAt}}\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update event (present-past)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"options date\",\r\n    \"title\": \"СКСтестtest\",\r\n    \"startAt\": \"2022-06-20T19:30:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:40:00+03:00\",\r\n    \"id\": {{boardId}},\r\n    \"oldStartAt\": \"{{startAt}}\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete event past (positiv)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": {{boardId}},\r\n\"startAt\":\"{{startAt}}\",\r\n\"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}removePersonal",
+							"host": [
+								"{{baseUrl}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Future (positive)",
+			"item": [
+				{
+					"name": "Create event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit a\",\r\n    \"title\": \"SKStest\",\r\n    \"startAt\": \"2022-06-30T00:00:00+03:00\",\r\n    \"endAt\": \"2022-06-30T23:50:00+03:00\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createPersonal",
+							"host": [
+								"{{baseUrl}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": {{boardId}},\r\n\"startAt\":\"{{startAt}}\",\r\n\"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}removePersonal",
+							"host": [
+								"{{baseUrl}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Present (positive)",
+			"item": [
+				{
+					"name": "Create event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"boardId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"\r",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\": \"https://avatars.mds.yandex.net/i?id=85758936555c18c923bf9ab3dd1a9588-4669930-images-thumbs&n=13&exp=1\",\r\n    \"title\": \"SKS_test1 !@&? test test _test1 !@&? st;\",\r\n    \"startAt\": \"2022-06-27T11:00:00+03:00\",\r\n    \"endAt\": \"2022-06-27T12:30:00+03:00\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createPersonal",
+							"host": [
+								"{{baseUrl}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete even",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": {{boardId}},\r\n\"startAt\":\"{{startAt}}\",\r\n\"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}removePersonal",
+							"host": [
+								"{{baseUrl}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete even (second time)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{myToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": {{boardId}},\r\n\"startAt\":\"{{startAt}}\",\r\n\"token_global\": \"{{myToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}removePersonal",
+							"host": [
+								"{{baseUrl}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative",
+			"item": [
+				{
+					"name": "Name",
+					"item": [
+						{
+							"name": "Create event empty name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2022-06-20T19:00:00+03:00\",\r\n    \"endAt\": \"2022-06-20T20:00:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create event spaces name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2022-06-20T19:00:00+03:00\",\r\n    \"endAt\": \"2022-06-20T20:00:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"  \",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create event name 41 characters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2022-07-20T19:00:00+03:00\",\r\n    \"endAt\": \"2022-07-20T20:00:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"Epsum factorial non deposit quid pro q uo\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Date",
+					"item": [
+						{
+							"name": "Create event date past",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"1899-06-20T19:00:00+03:00\",\r\n    \"endAt\": \"1899-06-20T20:00:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create event date future",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2100-06-20T19:00:00+03:00\",\r\n    \"endAt\": \"2100-06-20T20:00:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create event date non-exsisten",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2022-02-29T19:00:00+03:00\",\r\n    \"endAt\": \"2022-02-29T20:00:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create event date change",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2022-06-29T19:00:00+03:00\",\r\n    \"endAt\": \"2022-06-28T20:00:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create event without date",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt4\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId4\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"\",\r\n    \"endAt\": \"\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Interval",
+					"item": [
+						{
+							"name": "Create event 0 min",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2022-06-20T19:00:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:00:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create event 25 min",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2022-06-20T19:00:00+03:00\",\r\n    \"endAt\": \"2022-06-20T19:25:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create event without interval",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2022-06-20T\",\r\n    \"endAt\": \"2022-06-20T\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Description",
+					"item": [
+						{
+							"name": "Create event  501 characters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"startAt\": \"2022-07-20T19:00:00+03:00\",\r\n    \"endAt\": \"2022-07-20T20:00:00+03:00\",\r\n    \"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit au\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Color",
+					"item": [
+						{
+							"name": "Create event without color",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"\",\r\n    \"color\": \"\",\r\n    \"startAt\": \"2022-06-27T19:00:00+03:00\",\r\n    \"endAt\": \"2022-06-27T19:30:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create event another color",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)\r",
+											"\r",
+											"var key = \"boardId\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"\r",
+											"pm.collectionVariables.set(key, value)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{myToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#D80000\",\r\n    \"color\": \"#D80000\",\r\n    \"startAt\": \"2022-06-27T19:00:00+03:00\",\r\n    \"endAt\": \"2022-06-27T19:30:00+03:00\",\r\n    \"description\": \"\",\r\n    \"title\": \"SKS_test\",\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}createPersonal",
+									"host": [
+										"{{baseUrl}}createPersonal"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get schedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from\": \"2022-06-20T00:00:00+03:00\",\r\n    \"till\": \"2022-06-21T00:00:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"slot\",\r\n        \"event\"\r\n    ],\r\n    \"statuses\": [\r\n        \"without_status\"\r\n    ],\r\n    \"token_global\": \"{{myToken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}events",
+					"host": [
+						"{{baseUrl}}events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete last event",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": {{boardId}},\r\n\"startAt\":\"{{startAt}}\",\r\n\"token_global\": \"{{myToken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}removePersonal",
+					"host": [
+						"{{baseUrl}}removePersonal"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "myToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "startAt",
+			"value": ""
+		},
+		{
+			"key": "boardId",
+			"value": ""
+		},
+		{
+			"key": "startAt4",
+			"value": ""
+		},
+		{
+			"key": "boardId4",
+			"value": ""
+		}
+	]
+}
